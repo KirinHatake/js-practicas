@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Practica de JavaScript</title>
         <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="general">
@@ -12,42 +13,7 @@
             </header>
             <section>
         
-             <script>
-              const juego = function() {
-                const opciones = ["piedra", "papel", "tijera"];
-                const jugador = prompt("Elige piedra, papel o tijera:").toLowerCase();
-                const computadora = opciones[Math.floor(Math.random() * opciones.length)];
-                if (!opciones.includes(jugador)) {
-                    alert("Opción no válida. Por favor, elige piedra, papel o tijera.");
-                    return;
-                }
-                alert("Jugador: " + jugador + "\nComputadora: " + computadora);
-                if (jugador === computadora) {
-                    alert("¡Es un empate!");
-                } else if (
-                    (jugador === "piedra" && computadora === "tijera") ||
-                    (jugador === "papel" && computadora === "piedra") ||
-                    (jugador === "tijera" && computadora === "papel")
-                ) {
-                    alert("¡Ganaste!");
-                } else {
-                    alert("¡Perdiste!");
-                }
-                const jugarOtraVez = confirm("¿Quieres jugar otra vez?");
-                if (jugarOtraVez) {
-                    juego();
-                } else {
-                    alert("Gracias por jugar. ¡Hasta luego!");
-                }   
-
-              }
-                    
-
-
-
-                
-
-             </script>
+         
           
               
             </section>
