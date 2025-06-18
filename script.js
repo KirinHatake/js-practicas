@@ -59,7 +59,14 @@ function playGame() {
 
 
 }
-playRound();
+for (let i = 0; i < 3; i++) {
+    if (humanscore === 3 || computerscore === 3) {
+        break;
+    } else {
+        playRound();
+    }
+    
+}
 
 return console.log("Tu puntaje: " + humanscore + ", Puntaje de la computadora: " + computerscore);
 }
