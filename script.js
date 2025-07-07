@@ -1,6 +1,6 @@
 
 const getComputerChoice = function() {
-    const randomNumber = Math.floor(Math.random() * 3); 
+    const randomNumber = Math.floor(Math.random() * 2); 
     let result = "";
     if (randomNumber === 0) {
         result = "piedra"
@@ -8,19 +8,37 @@ const getComputerChoice = function() {
     } else if (randomNumber === 1) {
         result = "papel"
         return result;
-    } else  {
-        result = "tijeras"
+    } else {
+        result = "tijera"
         return result;
     }
-   
+  
 }
 
 
 const getHumanChoice = function() {
-    let seletHuman = prompt("Selecciona: Piedra, Papel o Tijera");
-    return seletHuman = seletHuman.toLowerCase().trim();
-    
+
+let seletHuman = "";
+
+for (let i = 0; i < 3; i++) {
+    seletHuman = prompt("Selecciona: Piedra, Papel o Tijera").toLowerCase().trim();
+        if (seletHuman === "piedra" || seletHuman === "papel" || seletHuman === "tijera") {
+            return seletHuman;
+        }
+        
+        else {
+             console.log("intento incorrecto, vuelve a intentarlo");
+             if (i === 2) {
+                console.log("Último intento fallido y finaliza el juego.");
+                
+                return seletHuman = null; 
+             }
+        }
+     
+        
     }
+}
+
 
     //hata aqui todo va bien las dos anteriores funciones cumple su papel
 
@@ -40,8 +58,13 @@ function playGame() {
     const computerChoice = getComputerChoice();
     console.log("Tu seleccionaste " + humanChoice);
     console.log("La computadora seleccionó " + computerChoice);
-
-    if (humanChoice === computerChoice){
+    
+    if ( humanChoice  === undefined || humanChoice === null) {
+        console.log("Juego terminado por selección inválida.");
+        
+        return true;
+    }
+   if (humanChoice === computerChoice){
         console.log("Empate");
     } 
     else if (
@@ -56,15 +79,23 @@ function playGame() {
         computerscore++;
         console.log("Perdiste!");
     }
-
+return false;
+    
+    
 
 }
-playRound();
-
+for (let i = 0; i < 5; i++) {
+    if (humanscore === 3 || computerscore === 3) {
+        break;
+    } 
+    if (playRound()) {
+        break;
+     
+        
+    }
+    
+}
 return console.log("Tu puntaje: " + humanscore + ", Puntaje de la computadora: " + computerscore);
+
 }
 
-// Por si alguien a llegado hasta aqui y ve mi codigo no te falta mucho continua aprendiendo
-// y muchos exitos en tu vida profesional y personal, 
-// recuerda que la vida es un juego y tu eres el protagonista de tu historia, 
-// no dejes que nadie te diga lo contrario, sigue adelante y nunca te rindas. 
