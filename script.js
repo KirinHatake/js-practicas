@@ -19,6 +19,7 @@ body.style.outline = "2px solid black";
 
 const contenedor = document.createElement("div");
 contenedor.style.display = "flex";
+contenedor.style.justifyContent = "space-around";
 contenedor.style.border = "2px solid black";
 contenedor.style.margin = "20px";
 contenedor.style.padding = "20px";
@@ -29,22 +30,6 @@ const destino = document.querySelector("#body");
 destino.appendChild(contenedor);
 
 //button
-
-const button = document.createElement("button");
-button.textContent = "Jugar";
-button.style.padding = "10px 20px";
-button.style.backgroundColor = "lightblue";
-button.style.border = "2px solid black";
-button.style.borderRadius = "5px";
-
-// Agregar evento para iniciar el juego al hacer clic en el botón
-button.addEventListener("click", () => {
-    playGame();
-});
-
-const buttonContainer = document.querySelector(".container");
-buttonContainer.appendChild(button);
-
 
 const piedra = document.createElement("button");
 piedra.textContent = "Piedra";
